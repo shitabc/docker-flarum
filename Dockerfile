@@ -15,7 +15,7 @@ RUN service mysql start; mysql --password=rootpass -e 'create database flarum;'
 #extensions
 RUN cd flarum; php ../composer.phar require vingle/flarum-configure-smtp
 ADD https://github.com/s9e/flarum-ext-mediaembed/releases/download/0.3.0/s9e-mediaembed-0.3.0.zip /var/www/flarum/extensions
-RUN cd extensions; unzip s9e-mediaembed-0.3.0.zip
+#RUN cd extensions; unzip s9e-mediaembed-0.3.0.zip
 
 EXPOSE 80
 CMD service mysql start; apache2-foreground
